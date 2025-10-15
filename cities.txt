@@ -1,30 +1,31 @@
-1 Colombo
-2 Kandy
-3 Galle
-4 Jaffna
-5 Anuradhapura
-6 Polonnaruwa
-7 Negombo
-8 Gampaha
-9 Ratnapura
-10 Kurunegala
-11 Matara
-12 Hambantota
-13 Batticaloa
-14 Trincomalee
-15 Nuwara Eliya
-16 Badulla
-17 Dambulla
-18 Kalutara
-19 Mannar
-20 Vavuniya
-21 Kilinochchi
-22 Ampara
-23 Monaragala
-24 Kegalle
-25 Chilaw
-26 Puttalam
-27 Bandarawela
-28 Tangalle
-29 Hatton
-30 Beruwala
+
+Colombo
+Kandy
+Galle
+Jaffna
+Anuradhapura
+Polonnaruwa
+Negombo
+Gampaha
+Ratnapura
+Kurunegala
+Matara
+Hambantota
+Batticaloa
+Trincomalee
+Nuwara Eliya
+Badulla
+Dambulla
+Kalutara
+Mannar
+Vavuniya
+Kilinochchi
+Ampara
+Monaragala
+Kegalle
+Chilaw
+Puttalam
+Bandarawela
+Tangalle
+Hatton
+Beruwala
