@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1760509431 source:c:\users\user\desktop\sjp\computer science\101 2.0 introduction to computer programming\as20240535\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
