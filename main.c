@@ -5,46 +5,27 @@
 #define MAX_CITIES 30
 
 void storeCities(char cityName[MAX_CITIES][20], int num_cities);
+int addCities(char cityName[MAX_CITIES][20], int num_cities);
 void getCities(char cityName[MAX_CITIES][20], int num_cities);
+
+
 
 
 int main()
 {
     char cityName[MAX_CITIES][20];
-    int num_cities=30;
+    int num_cities=6;
 
-     strcpy(cityName[0], "Colombo");
-     strcpy(cityName[1], "Kandy");
-     strcpy(cityName[2], "Galle");
-     strcpy(cityName[3], "Jaffna");
-     strcpy(cityName[4], "Anuradhapura");
-     strcpy(cityName[5], "Polonnaruwa");
-     strcpy(cityName[6], "Negombo");
-     strcpy(cityName[7], "Gampaha");
-     strcpy(cityName[8], "Ratnapura");
-     strcpy(cityName[9], "Kurunegala");
-     strcpy(cityName[10], "Matara");
-     strcpy(cityName[11], "Hambantota");
-     strcpy(cityName[12], "Batticaloa");
-     strcpy(cityName[13], "Trincomalee");
-     strcpy(cityName[14], "Nuwara Eliya");
-     strcpy(cityName[15], "Badulla");
-     strcpy(cityName[16], "Dambulla");
-     strcpy(cityName[17], "Kalutara");
-     strcpy(cityName[18], "Mannar");
-     strcpy(cityName[19], "Vavuniya");
-     strcpy(cityName[20], "Kilinochchi");
-     strcpy(cityName[21], "Ampara");
-     strcpy(cityName[22], "Monaragala");
-     strcpy(cityName[23], "Kegalle");
-     strcpy(cityName[24], "Chilaw");
-     strcpy(cityName[25], "Puttalam");
-     strcpy(cityName[26], "Bandarawela");
-     strcpy(cityName[27], "Tangalle");
-     strcpy(cityName[28], "Hatton");
-     strcpy(cityName[29], "Beruwala");
+    strcpy(cityName[0], "Colombo");
+    strcpy(cityName[1], "Kandy");
+    strcpy(cityName[2], "Galle");
+    strcpy(cityName[3], "Jaffna");
+    strcpy(cityName[4], "Anuradhapura");
+    strcpy(cityName[5], "Polonnaruwa");
 
-     storeCities(cityName,num_cities);
+    storeCities(cityName,num_cities);
+    getCities(cityName,num_cities);
+    num_cities= addCities(cityName,num_cities);
     getCities(cityName,num_cities);
 
     return 0;
@@ -67,11 +48,40 @@ void storeCities(char cityName[MAX_CITIES][20], int num_cities)
 
         for (i = 0; i < num_cities; i++)
         {
-            fprintf(cities_file, "\n%s",cityName[i]);
+            fprintf(cities_file, "%s\n",cityName[i]);
         }
 
         fclose(cities_file);
-        printf("City list (total %d) successfully saved to cities.txt.\n", num_cities);
+        printf("City list (total %d) successfully stored to cities.txt.\n", num_cities);
+    }
+}
+
+int addCities(char cityName[MAX_CITIES][20], int num_cities)
+{
+    char newCity[20];
+
+    FILE *cities_file = fopen("cities.txt", "a");
+
+    printf("\nEnter city name: ");
+    fgets(newCity,20,stdin);
+
+    if (cities_file == NULL)
+    {
+        printf("Error: Could not open cities.txt for append.\n");
+        return 0;
+    }
+
+    else
+    {
+        int i=0;
+
+        fprintf(cities_file, "%s",newCity);
+        num_cities++;
+
+        fclose(cities_file);
+        printf("City list (total %d) successfully Added to cities.txt.\n", num_cities);
+
+        return num_cities;
     }
 }
 
@@ -81,7 +91,7 @@ void getCities(char cityName[MAX_CITIES][20], int num_cities)
 
     if (cities_file == NULL)
     {
-        printf("Error: Could not open cities.txt for writing.\n");
+        printf("Error: Could not open cities.txt for reading.\n");
         return;
     }
 
